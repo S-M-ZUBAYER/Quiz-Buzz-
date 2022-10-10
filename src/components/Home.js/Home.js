@@ -1,11 +1,15 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Heading from '../Heading/Heading';
 import ItemCart from '../ItemCart/ItemCart';
 
 const Home = () => {
     const courses = useLoaderData();
-    console.log(courses.data)
+    const navigate = useNavigate();
+    const startQuiz = (id) => {
+        navigate(`/home/${id}`)
+    }
+
     return (
         <div>
             <Heading></Heading>
@@ -16,7 +20,7 @@ const Home = () => {
             </section>
             <div className="max-w-screen-xl p-5 mx-auto dark:dark:bg-gray-800 dark:dark:text-gray-100">
                 <div className="grid grid-cols-1 gap-5 lg:grid-cols-4 sm:grid-cols-2">
-                    {(courses.data).map(topic => <ItemCart key={topic.id} topic={topic}></ItemCart>)}
+                    {(courses.data).map(topic => <ItemCart key={topic.id} topic={topic} startQuiz={startQuiz}></ItemCart>)}
                 </div>
             </div>
         </div>
