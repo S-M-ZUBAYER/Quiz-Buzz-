@@ -7,6 +7,8 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import Home from './components/Home.js/Home';
 import Statistics from './components/Statistics/Statistics';
 import Root from './layout/Root';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +35,7 @@ function App() {
 
         {
           path: '/statistics',
+          loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
           element: <Statistics></Statistics>
         },
         {
@@ -50,6 +53,8 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

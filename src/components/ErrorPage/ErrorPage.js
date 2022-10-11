@@ -17,7 +17,7 @@ const ErrorPage = () => {
                         <span className="sr-only">{error.status}</span>404
                     </h2>
                     <p className="text-3xl ">OPS!!! This page <span className=" text-red-600 font-bold">{error.statusText || error.message}</span></p>
-                    <Link to='/' className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Back to homepage</Link>
+                    <Link to='/' className="px-8 py-3 font-semibold rounded bg-red-300 text-black dark:text-gray-900">Back to homepage</Link>
                 </div>
             </section>
         </div>
