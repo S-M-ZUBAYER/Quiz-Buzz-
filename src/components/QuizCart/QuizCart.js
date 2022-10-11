@@ -1,13 +1,13 @@
 import React from 'react';
 import Questions from '../Questions/Questions';
 
-const QuizCart = ({ questions }) => {
+const QuizCart = ({ questions, logo }) => {
 
 
     return (
         <div>
 
-            {questions.map(quiz => <Questions key={quiz.id} quiz={quiz}></Questions>)}
+            {questions.map(quiz => <Questions key={quiz.id} logo={logo} quiz={quiz}></Questions>)}
 
 
         </div>

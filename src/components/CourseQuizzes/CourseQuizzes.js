@@ -11,7 +11,7 @@ const CourseQuizzes = () => {
                 <QuizInfo quizIntro={courseQuizzes.data}></QuizInfo>
             </div>
             <div>
-                <Quiz></Quiz>
+                <Quiz quizIntro={courseQuizzes.data}></Quiz>
             </div>
         </div>
 
