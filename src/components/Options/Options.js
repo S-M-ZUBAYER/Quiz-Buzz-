@@ -1,11 +1,31 @@
 import React from 'react';
+import { toast } from 'react-toastify'
 
-const Options = ({ option, id }) => {
+const Options = ({ option, id, ans }) => {
+    const chooseAns = (e) => {
+        let alreadyAnsId = [];
+        console.log(alreadyAnsId)
+        if (e.target.innerText === ans) {
+            const found = alreadyAnsId.find(ans => ans.id === id);
+            console.log(found)
+            if (found) {
+                toast.warning('You already ans this question')
+            }
+            else {
+                alreadyAnsId.push(id)
+            }
+            toast.success(`WOW..You Press Correct Ans.. `, { autoClose: 500 })
+        }
+        else {
+            toast.error('You Press Wrong Ans', { autoClose: 800 })
+        }
+
+    }
     return (
         <div>
             {/* <section className="p-4 my-6 md:p-8 dark:bg-gray-800 dark:text-gray-100 "> */}
             <div className=" text-center container  m-4 mx-auto ">
-                <div className=" my-2 flex overflow-hidden rounded-lg bg-slate-700 dark:text-gray-100 hover:bg-sky-700 cursor-pointer">
+                <div onClick={(e) => { chooseAns(e) }} className=" my-2 flex overflow-hidden rounded-lg bg-slate-700 dark:text-gray-100 hover:bg-sky-700 cursor-pointer">
                     <div className="flex items-center justify-center px-4 bg-violet-400 dark:text-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="w-6 h-6">
                             <path d="M487.938,162.108l-224-128a16,16,0,0,0-15.876,0l-224,128a16,16,0,0,0,.382,28l224,120a16,16,0,0,0,15.112,0l224-120a16,16,0,0,0,.382-28ZM256,277.849,65.039,175.548,256,66.428l190.961,109.12Z"></path>
