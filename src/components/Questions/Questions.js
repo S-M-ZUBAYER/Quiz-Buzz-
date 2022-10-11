@@ -1,11 +1,14 @@
 import React from 'react';
 import Options from '../Options/Options';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Questions = ({ quiz, logo }) => {
     const { id, correctAnswer, question, options } = quiz;
-
     return (
-        <div className=" mx-[10%]">
+        <div className=" mx-[10%] mt-20">
             <div className="flex justify-start gap-5 items-center mb-3 mt-10">
                 <div className="flex flex-col items-start justify-center">
                     <div className="flex space-x-5">
@@ -13,6 +16,8 @@ const Questions = ({ quiz, logo }) => {
                     </div>
                 </div>
                 <h1 className="text-lg font-semibold"><span className="text-lg text-rose-400 underline font-bold">Question:</span> {question.substring(3, question.length - 4)}</h1>
+                <button className="btn btn-sm btn-accent ml-auto">Check <FontAwesomeIcon className="ml-2" icon={faEye} /> </button>
+                <ToastContainer />
             </div>
 
             <div className="ml-8">

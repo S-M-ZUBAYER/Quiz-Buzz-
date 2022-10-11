@@ -4,7 +4,7 @@ const Quiz = ({ quizIntro }) => {
     const { logo, name, total } = quizIntro;
     return (
         <div>
-            <div className="h-full p-3 space-y-2 w-96 dark:dark:bg-gray-900 bg-slate-700 mt-5 mx-auto dark:dark:text-gray-100">
+            <div className=" h-full p-3 space-y-2 w-96 dark:dark:bg-gray-900 bg-slate-700 mt-5 mx-auto  dark:dark:text-gray-100">
                 <div className="flex items-center p-2 space-x-4">
                     <img src={logo} alt="" className="w-12 h-12 rounded-full dark:dark:bg-gray-500" />
                     <div>
