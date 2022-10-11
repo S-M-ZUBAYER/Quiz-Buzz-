@@ -3,7 +3,6 @@ import QuizCart from '../QuizCart/QuizCart';
 
 const QuizInfo = ({ quizIntro }) => {
     const { name, total, logo, questions } = quizIntro;
-    console.log(questions)
 
     return (
         <div>

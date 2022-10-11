@@ -5,8 +5,6 @@ import QuizInfo from '../QuizInfo/QuizInfo';
 
 const CourseQuizzes = () => {
     const courseQuizzes = useLoaderData();
-    console.log(courseQuizzes.data)
-
     return (
         <div className="grid grid-cols-3 gap-4">
             <div className="col-span-2">

@@ -1,11 +1,15 @@
 import React from 'react';
+import Questions from '../Questions/Questions';
 
 const QuizCart = ({ questions }) => {
-    const { correctAnswe, id, options, question } = questions[0];
-    console.log(question)
+
+
     return (
         <div>
-            <h1>{question}</h1>
+
+            {questions.map(quiz => <Questions key={quiz.id} quiz={quiz}></Questions>)}
+
+
         </div>
     );
 };
