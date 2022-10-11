@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Blog from './components/Blog/Blog';
 import CourseQuizzes from './components/CourseQuizzes/CourseQuizzes';
+import Courses from './components/Courses/Courses';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Home from './components/Home.js/Home';
 import Statistics from './components/Statistics/Statistics';
@@ -24,6 +25,12 @@ function App() {
           loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
           element: <Home></Home>
         },
+        {
+          path: '/courses',
+          loader: () => fetch('https://openapi.programming-hero.com/api/quiz'),
+          element: <Courses></Courses>
+        },
+
         {
           path: '/statistics',
           element: <Statistics></Statistics>
