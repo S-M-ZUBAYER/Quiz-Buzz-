@@ -1,4 +1,3 @@
-import React from 'react';
 import { toast } from 'react-toastify'
 let alreadyAnsId = [];
 let allCorrectAnsId = [];
@@ -6,24 +5,29 @@ let allWrongAnsId = [];
 const Options = ({ option, id, ans }) => {
     const addedOrNot = () => {
         const found = alreadyAnsId.find(ans => ans === id);
-        console.log(found)
         if (found) {
-            toast.warning('You already ans this question');
+            toast.warning('You already ans this question', { autoClose: 800 });
             return;
         }
         else {
             alreadyAnsId.push(id)
-
-            console.log(alreadyAnsId, id)
+            // setItem(alreadyAnsId.length)
+            localStorage.setItem('already-ans', JSON.stringify(alreadyAnsId.length));
+            if (option === ans) {
+                allCorrectAnsId.push(id);
+                localStorage.setItem('correct-ans', JSON.stringify(allCorrectAnsId.length));
+            }
+            else {
+                allWrongAnsId.push(id);
+                localStorage.setItem('wrong-ans', JSON.stringify(allWrongAnsId.length));
+            }
         }
     }
     const chooseAns = (e) => {
-
-
         if (option !== ans) {
-            toast.error('You Press Wrong Ans', { autoClose: 800 })
-            addedOrNot();
             e.target.style.backgroundColor = 'red'
+            addedOrNot();
+            toast.error('You Press Wrong Ans', { autoClose: 800 })
 
         }
         else {

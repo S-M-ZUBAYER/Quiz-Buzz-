@@ -17,4 +17,4 @@ There are 4 nav link to go different router. you can go Home or Courses Option t
 
 
 ### `Live Project Link:`
-[https://github.com/programming-hero-web-course2/b6-quiz-crackerz-S-M-ZUBAYER]
+[https://quiz-buzz-justify.netlify.app/]

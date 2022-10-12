@@ -1,10 +1,15 @@
 import React from 'react';
+import { storeValue } from '../../Utilities/GotData';
 
 const Quiz = ({ quizIntro }) => {
+    const alreadyAns = storeValue('already-ans');
+    const allCorrectAns = storeValue('correct-ans');
+    const allWrongAns = storeValue('wrong-ans');
+
     const { logo, name, total } = quizIntro;
     return (
-        <div>
-            <div className=" h-full p-3 space-y-2 w-96 dark:dark:bg-gray-900 bg-slate-700 mt-5 mx-auto md:w-[90%]  dark:dark:text-gray-100 ">
+        <div className="sticky top-28">
+            <div className="  h-full p-3 space-y-2 w-96 dark:dark:bg-gray-900 bg-slate-700 mt-5 mx-auto md:w-[90%]  dark:dark:text-gray-100 ">
                 <div className="flex items-center p-2 space-x-4">
                     <div className="flex flex-col items-start justify-center">
                         <div className="flex space-x-5">
@@ -29,16 +34,16 @@ const Quiz = ({ quizIntro }) => {
                         </li>
                         <li>
 
-                            <p className="text-base font-semibold">Total Correct Ans: 5</p>
+                            <p className="text-base font-semibold">Total Correct Ans: {allCorrectAns}</p>
                         </li>
                         <li className='mb-2'>
 
-                            <p className="text-base font-semibold">Total Wrong Ans: 5</p>
+                            <p className="text-base font-semibold">Total Wrong Ans: {allWrongAns}</p>
                         </li>
                         <hr />
                         <li className="mt-2">
 
-                            <p className="text-lg font-semibold">Total Marks: {total}</p>
+                            <p className="text-lg font-semibold">Total Marks: {allCorrectAns * 5}</p>
                         </li>
                     </ul>
 

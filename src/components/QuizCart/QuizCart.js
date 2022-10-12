@@ -5,7 +5,7 @@ const QuizCart = ({ questions, logo }) => {
 
 
     return (
-        <div className="md:w-full">
+        <div className="md:w-full lg:mt-[-50px] sm:mt-[-30px]">
 
             {questions.map(quiz => <Questions key={quiz.id} logo={logo} quiz={quiz}></Questions>)}
 
