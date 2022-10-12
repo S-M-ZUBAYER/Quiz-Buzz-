@@ -24,7 +24,7 @@ const Questions = ({ quiz, logo }) => {
             </div>
 
             <div className="ml-8">
-                {options.map(option => <Options option={option} id={id} ans={correctAnswer} ></Options>)}
+                {options.map(option => <Options key={id} option={option} id={id} ans={correctAnswer} ></Options>)}
             </div>
 
 

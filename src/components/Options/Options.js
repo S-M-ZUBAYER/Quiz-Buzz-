@@ -1,23 +1,35 @@
 import React from 'react';
 import { toast } from 'react-toastify'
-
+let alreadyAnsId = [];
+let allCorrectAnsId = [];
+let allWrongAnsId = [];
 const Options = ({ option, id, ans }) => {
-    const chooseAns = (e) => {
-        let alreadyAnsId = [];
-        console.log(alreadyAnsId)
-        if (e.target.innerText === ans) {
-            const found = alreadyAnsId.find(ans => ans.id === id);
-            console.log(found)
-            if (found) {
-                toast.warning('You already ans this question')
-            }
-            else {
-                alreadyAnsId.push(id)
-            }
-            toast.success(`WOW..You Press Correct Ans.. `, { autoClose: 500 })
+    const addedOrNot = () => {
+        const found = alreadyAnsId.find(ans => ans === id);
+        console.log(found)
+        if (found) {
+            toast.warning('You already ans this question');
+            return;
         }
         else {
+            alreadyAnsId.push(id)
+
+            console.log(alreadyAnsId, id)
+        }
+    }
+    const chooseAns = (e) => {
+
+
+        if (option !== ans) {
             toast.error('You Press Wrong Ans', { autoClose: 800 })
+            addedOrNot();
+            e.target.style.backgroundColor = 'red'
+
+        }
+        else {
+            e.target.style.backgroundColor = 'blue'
+            addedOrNot();
+            toast.success(`WOW..You Press Correct Ans.. `, { autoClose: 800 })
         }
 
     }
