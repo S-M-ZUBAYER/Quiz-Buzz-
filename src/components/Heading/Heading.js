@@ -5,7 +5,7 @@ const Heading = () => {
     return (
         <div>
             <section className="dark:dark:bg-gray-800 dark:dark:text-gray-100">
-                <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
+                <div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-12 lg:flex-row lg:justify-between">
                     <div className="lg:w-[50%] flex flex-col justify-center p-6 text-center rounded-sm ">
                         <h1 className="text-5xl font-bold leading-none sm:text-3xl">Check Your
                             <span className="dark:dark:text-violet-400"> Improvement </span>With Quiz Buzz!!!

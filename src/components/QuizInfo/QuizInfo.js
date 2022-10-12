@@ -1,7 +1,7 @@
 import React from 'react';
 import QuizCart from '../QuizCart/QuizCart';
 
-const QuizInfo = ({ quizIntro }) => {
+const QuizInfo = ({ quizIntro, handlerCurrentResult }) => {
     const { name, total, logo, questions, } = quizIntro;
 
     return (
@@ -17,7 +17,7 @@ const QuizInfo = ({ quizIntro }) => {
                     </div>
                 </div>
             </section>
-            <QuizCart questions={questions} logo={logo}></QuizCart>
+            <QuizCart handlerCurrentResult={handlerCurrentResult} questions={questions} logo={logo}></QuizCart>
         </div>
     );
 };

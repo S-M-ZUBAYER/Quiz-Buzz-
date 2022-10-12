@@ -2,7 +2,7 @@ import { toast } from 'react-toastify'
 let alreadyAnsId = [];
 let allCorrectAnsId = [];
 let allWrongAnsId = [];
-const Options = ({ option, id, ans }) => {
+const Options = ({ option, id, ans, handlerCurrentResult }) => {
     const addedOrNot = () => {
         const found = alreadyAnsId.find(ans => ans === id);
         if (found) {
@@ -35,7 +35,7 @@ const Options = ({ option, id, ans }) => {
             addedOrNot();
             toast.success(`WOW..You Press Correct Ans.. `, { autoClose: 800 })
         }
-
+        handlerCurrentResult();
     }
     return (
         <div>

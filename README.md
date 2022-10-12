@@ -8,8 +8,8 @@ This is single page application. To build this site i use react js.
 
 ### How to Use the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser or you can use [Quiz Buzz](https://quiz-buzz-justify.netlify.app/). <br/>
+Runs the site in the development mode.
+Open [Quiz Buzz](https://quiz-buzz-justify.netlify.app/) to view it in your browser. <br/>
 There are 4 nav link to go different router. you can go Home or Courses Option then you can see different courses. There you can press to option the quiz page on this particular course. There you can answer these questions and also check the correct answer. And after answering all the quizzes you can know about your level on this particular subject. 
 
 ### `Github Link:`

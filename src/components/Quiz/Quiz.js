@@ -1,10 +1,11 @@
 import React from 'react';
 import { storeValue } from '../../Utilities/GotData';
 
-const Quiz = ({ quizIntro }) => {
-    const alreadyAns = storeValue('already-ans');
-    const allCorrectAns = storeValue('correct-ans');
-    const allWrongAns = storeValue('wrong-ans');
+const Quiz = ({ quizIntro, result }) => {
+    const { alreadyAns, correctAns, wrongAns } = result;
+    // const alreadyAns = storeValue('already-ans');
+    // const allCorrectAns = storeValue('correct-ans');
+    // const allWrongAns = storeValue('wrong-ans');
 
     const { logo, name, total } = quizIntro;
     return (
@@ -34,16 +35,16 @@ const Quiz = ({ quizIntro }) => {
                         </li>
                         <li>
 
-                            <p className="text-base font-semibold">Total Correct Ans: {allCorrectAns}</p>
+                            <p className="text-base font-semibold">Total Correct Ans: {correctAns}</p>
                         </li>
                         <li className='mb-2'>
 
-                            <p className="text-base font-semibold">Total Wrong Ans: {allWrongAns}</p>
+                            <p className="text-base font-semibold">Total Wrong Ans: {wrongAns}</p>
                         </li>
                         <hr />
                         <li className="mt-2">
 
-                            <p className="text-lg font-semibold">Total Marks: {allCorrectAns * 5}</p>
+                            <p className="text-lg font-semibold">Total Marks: {correctAns * 5}</p>
                         </li>
                     </ul>
 

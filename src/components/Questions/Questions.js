@@ -5,7 +5,7 @@ import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { toast } from 'react-toastify'
 
 
-const Questions = ({ quiz, logo }) => {
+const Questions = ({ quiz, logo, handlerCurrentResult }) => {
 
     const { id, correctAnswer, question, options } = quiz;
     const showAns = (id) => {
@@ -24,7 +24,7 @@ const Questions = ({ quiz, logo }) => {
             </div>
 
             <div className="ml-8">
-                {options.map(option => <Options key={option} option={option} id={id} ans={correctAnswer} ></Options>)}
+                {options.map(option => <Options handlerCurrentResult={handlerCurrentResult} key={option} option={option} id={id} ans={correctAnswer} ></Options>)}
             </div>
 
 
