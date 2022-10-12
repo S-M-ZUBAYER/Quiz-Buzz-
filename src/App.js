@@ -53,7 +53,6 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>
-
       <ToastContainer></ToastContainer>
     </div>
   );

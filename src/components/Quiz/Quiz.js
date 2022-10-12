@@ -3,9 +3,6 @@ import { storeValue } from '../../Utilities/GotData';
 
 const Quiz = ({ quizIntro, result }) => {
     const { alreadyAns, correctAns, wrongAns } = result;
-    // const alreadyAns = storeValue('already-ans');
-    // const allCorrectAns = storeValue('correct-ans');
-    // const allWrongAns = storeValue('wrong-ans');
 
     const { logo, name, total } = quizIntro;
     return (
@@ -17,7 +14,6 @@ const Quiz = ({ quizIntro, result }) => {
                             <img alt="" className="w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800" src={logo} />
                         </div>
                     </div>
-                    {/* <img src={logo} alt="" className="w-12 h-12 rounded-full dark:dark:bg-gray-500" /> */}
                     <div>
                         <h2 className="text-lg font-semibold">Result Summary On {name}</h2>
 

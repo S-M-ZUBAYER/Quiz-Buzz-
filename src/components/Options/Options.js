@@ -11,7 +11,6 @@ const Options = ({ option, id, ans, handlerCurrentResult }) => {
         }
         else {
             alreadyAnsId.push(id)
-            // setItem(alreadyAnsId.length)
             localStorage.setItem('already-ans', JSON.stringify(alreadyAnsId.length));
             if (option === ans) {
                 allCorrectAnsId.push(id);
@@ -39,7 +38,6 @@ const Options = ({ option, id, ans, handlerCurrentResult }) => {
     }
     return (
         <div>
-            {/* <section className="p-4 my-6 md:p-8 dark:bg-gray-800 dark:text-gray-100 "> */}
             <div className=" text-center container  m-4 mx-auto ">
                 <div onClick={(e) => { chooseAns(e) }} className=" my-2 flex overflow-hidden rounded-lg bg-slate-700 dark:text-gray-100 hover:bg-sky-700 cursor-pointer">
                     <div className="flex items-center justify-center px-4 bg-violet-400 dark:text-gray-800">
@@ -54,7 +52,6 @@ const Options = ({ option, id, ans, handlerCurrentResult }) => {
                     </div>
                 </div>
             </div>
-            {/* </section> */}
         </div>
     );
 };

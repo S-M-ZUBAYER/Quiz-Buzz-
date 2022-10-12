@@ -6,10 +6,14 @@ import QuizInfo from '../QuizInfo/QuizInfo';
 
 const CourseQuizzes = () => {
     const courseQuizzes = useLoaderData();
+
+    // set useState to show the update result
     const [alreadyAns, setAlreadyAns] = useState(storeValue('already-ans'));
     const [correctAns, setCorrectAns] = useState(storeValue('correct-ans'));
     const [wrongAns, setWrongAns] = useState(storeValue('wrong-ans'));
     const result = { alreadyAns, correctAns, wrongAns };
+
+    // create a function to load data from local storage and show the current result
     const handlerCurrentResult = () => {
         const alreadyAnsDb = storeValue('already-ans');
         setAlreadyAns(alreadyAnsDb);
@@ -19,6 +23,7 @@ const CourseQuizzes = () => {
         setWrongAns(allWrongAnsDb);
         console.log(alreadyAns, correctAns, wrongAns)
     }
+
     return (
         <div className=" flex flex-col-reverse lg:grid grid-cols-3 gap-4">
             <div className="col-span-2">
@@ -28,7 +33,6 @@ const CourseQuizzes = () => {
                 <Quiz result={result} quizIntro={courseQuizzes.data}></Quiz>
             </div>
         </div>
-
     );
 };
 

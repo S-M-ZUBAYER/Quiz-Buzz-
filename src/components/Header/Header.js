@@ -24,7 +24,7 @@ const Header = () => {
                         <li><NavLink to='/blog'>Blog</NavLink></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Quiz Buzz</a>
+                <Link href="./" className="btn btn-ghost normal-case text-xl">Quiz Buzz</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

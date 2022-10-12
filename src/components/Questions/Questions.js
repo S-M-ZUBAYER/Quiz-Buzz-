@@ -26,8 +26,6 @@ const Questions = ({ quiz, logo, handlerCurrentResult }) => {
             <div className="ml-8">
                 {options.map(option => <Options handlerCurrentResult={handlerCurrentResult} key={option} option={option} id={id} ans={correctAnswer} ></Options>)}
             </div>
-
-
         </div>
     );
 };

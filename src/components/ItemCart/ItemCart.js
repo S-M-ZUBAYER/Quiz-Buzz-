@@ -11,7 +11,6 @@ const ItemCart = ({ topic, startQuiz }) => {
                 <p className="px-3 py-2 text-lg font-bold tracking-wider uppercase dark:dark:text-gray-100">{name}</p>
                 <div className="flex flex-col justify-start text-center dark:dark:text-gray-100">
                     <button className="btn btn-sm btn-outline btn-accent">Start</button>
-
                 </div>
             </div>
             <h2 className="z-10 p-5">
